@@ -6,6 +6,10 @@
     display:flex;
     flex-shrink: 0;
     flex-wrap: wrap;
+    border:5px;
+    border-style: solid;
+    border-color: lightgrey ;
+
 }
 
 .squares {
@@ -17,6 +21,3 @@
     border-color: white;
 }
 
-.squares:hover {
-    background-color: yellow;
-}
