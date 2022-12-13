@@ -2,7 +2,7 @@ const container = document.querySelector('#container');
 
 let htmlString = "";
 
-for (let i = 0; i < 16; i++) {
+for (let i = 0; i < 256; i++) {
     htmlString += `<div class="squares">${i}</div>`;
 }
 
