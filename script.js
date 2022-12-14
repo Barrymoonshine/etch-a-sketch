@@ -33,3 +33,19 @@ function changeGridMedium() {
 }
 
 mediumGrid[0].addEventListener(`click`, changeGridMedium);
+
+const mediumGrid = document.getElementsByClassName(`medium`);
+
+function changeGridMedium() {
+  changeGridSize(`medium`);
+}
+
+mediumGrid[0].addEventListener(`click`, changeGridMedium);
+
+const largeGrid = document.getElementsByClassName(`large`);
+
+function changeGridLarge() {
+  changeGridSize(`large`);
+}
+
+LargeGrid[0].addEventListener(`click`, changeGridLarge);
