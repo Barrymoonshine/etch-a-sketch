@@ -18,13 +18,3 @@ for (let e = 0; e < numSquares; e++) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    let sliderWidth = document.getElementById("myRange");
-    let outputWidth = document.getElementById("width");
-    outputWidth.innerHTML = sliderWidth.value;
-    
-    sliderWidth.oninput = function () {
-        outputWidth.innerHTML = this.value;
-        console.log(outputWidth);
-}
-})
