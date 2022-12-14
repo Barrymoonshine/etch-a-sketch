@@ -22,7 +22,14 @@ const smallGrid = document.getElementsByClassName(`small`);
 
 function changeGridSmall() {
   changeGridSize(`small`);
-  window.location.reload();
 }
 
 smallGrid[0].addEventListener(`click`, changeGridSmall);
+
+const mediumGrid = document.getElementsByClassName(`medium`);
+
+function changeGridMedium() {
+  changeGridSize(`medium`);
+}
+
+mediumGrid[0].addEventListener(`click`, changeGridMedium);
