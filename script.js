@@ -43,12 +43,13 @@ function changeGridLarge() {
 largeGrid[0].addEventListener(`click`, changeGridLarge);
 
 function changeGridSize (gridSize) {
-    if (gridSize == `large`){
+    let htmlString = "";
+    if (gridSize === `large`){
         for (let i = 0; i < 4096; i++) {
             htmlString += `<div class="squares"></div>`;
         }
         container.innerHTML = htmlString;
-    } else if (gridSize == `medium`) {
+    } else if (gridSize === `medium`) {
         for (let i = 0; i < 1024; i++) {
             htmlString += `<div class="squares"></div>`;
         }
@@ -59,5 +60,4 @@ function changeGridSize (gridSize) {
         }
         container.innerHTML = htmlString;
     }
-    window.location.reload();
 }
