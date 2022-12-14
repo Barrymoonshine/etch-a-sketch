@@ -18,3 +18,11 @@ for (let e = 0; e < numSquares; e++) {
     });
 }
 
+const smallGrid = document.getElementsByClassName(`small`);
+
+function changeGridSmall() {
+  changeGridSize(`small`);
+  window.location.reload();
+}
+
+smallGrid[0].addEventListener(`click`, changeGridSmall);
