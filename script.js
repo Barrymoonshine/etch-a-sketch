@@ -8,9 +8,13 @@ for (let i = 0; i < 256; i++) {
 
 container.innerHTML = htmlString;
 
-let squaresHover = document.querySelector(squares);
+let squaresHover = document.getElementsByClassName('squares');
 
-squaresHover.addEventListener('mouseover', () => {
-    squaresHover.style.backgroundColor = "yellow";
+squaresHover[0].addEventListener('mouseover', () => {
+    squaresHover[0].style.backgroundColor = "yellow";
+});
+
+squaresHover[0].addEventListener('mouseout', () => {
+    squaresHover[0].style.backgroundColor = "black";
 });
 
