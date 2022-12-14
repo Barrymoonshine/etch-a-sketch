@@ -2,21 +2,29 @@ const container = document.querySelector('#container');
 
 let htmlString = "";
 
-for (let i = 0; i < 256; i++) {
-    htmlString += `<div class="squares">${i}</div>`;
+for (let i = 0; i < 1024; i++) {
+    htmlString += `<div class="squares"></div>`;
 }
 
 container.innerHTML = htmlString;
 
-let hoverEffect = document.getElementsByClassName('squares');
+let getSquares = document.getElementsByClassName('squares');
 
-let numSquares = hoverEffect.length;
+let numSquares = getSquares.length;
 
 for (let e = 0; e < numSquares; e++) {
-    hoverEffect[e].addEventListener('mouseover', () => {
-        hoverEffect[e].style.backgroundColor = "yellow";
-    });
-    hoverEffect[e].addEventListener('mouseout', () => {
-        hoverEffect[e].style.backgroundColor = "black";
+    getSquares[e].addEventListener('mouseover', () => {
+        getSquares[e].style.backgroundColor = "grey";
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    let sliderWidth = document.getElementById("myRange");
+    let outputWidth = document.getElementById("width");
+    outputWidth.innerHTML = sliderWidth.value;
+    
+    sliderWidth.oninput = function () {
+        outputWidth.innerHTML = this.value;
+        console.log(outputWidth);
+}
+})
