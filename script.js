@@ -8,13 +8,15 @@ for (let i = 0; i < 256; i++) {
 
 container.innerHTML = htmlString;
 
-let squaresHover = document.getElementsByClassName('squares');
+let hoverEffect = document.getElementsByClassName('squares');
 
-squaresHover[0].addEventListener('mouseover', () => {
-    squaresHover[0].style.backgroundColor = "yellow";
-});
+let numSquares = hoverEffect.length;
 
-squaresHover[0].addEventListener('mouseout', () => {
-    squaresHover[0].style.backgroundColor = "black";
-});
-
+for (let e = 0; e < numSquares; e++) {
+    hoverEffect[e].addEventListener('mouseover', () => {
+        hoverEffect[e].style.backgroundColor = "yellow";
+    });
+    hoverEffect[e].addEventListener('mouseout', () => {
+        hoverEffect[e].style.backgroundColor = "black";
+    });
+}
