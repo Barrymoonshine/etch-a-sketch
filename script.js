@@ -18,46 +18,11 @@ for (let e = 0; e < numSquares; e++) {
     });
 }
 
-const smallGrid = document.getElementsByClassName(`small`);
-
-function changeGridSmall() {
-  changeGridSize(`small`);
-}
-
-smallGrid[0].addEventListener(`click`, changeGridSmall);
-
-const mediumGrid = document.getElementsByClassName(`medium`);
-
-function changeGridMedium() {
-  changeGridSize(`medium`);
-}
-
-mediumGrid[0].addEventListener(`click`, changeGridMedium);
-
-const largeGrid = document.getElementsByClassName(`large`);
-
-function changeGridLarge() {
-  changeGridSize(`large`);
-}
-
-largeGrid[0].addEventListener(`click`, changeGridLarge);
-
-function changeGridSize (gridSize) {
-    let htmlString = "";
-    if (gridSize === `large`){
-        for (let i = 0; i < 4096; i++) {
-            htmlString += `<div class="squares"></div>`;
-        }
-        container.innerHTML = htmlString;
-    } else if (gridSize === `medium`) {
-        for (let i = 0; i < 1024; i++) {
-            htmlString += `<div class="squares"></div>`;
-        }
-        container.innerHTML = htmlString;
-    } else if (gridSize === `small`) {
-        for (let i = 0; i < 16; i++) {
-            htmlString += `<div class="squares"></div>`;
-        }
-        container.innerHTML = htmlString;
+window.onload = function setGridSize () {
+    let el = document.getElementById('gridInput');
+    el.onclick = function() {
+        let my_text = prompt ('Enter grid size here');
+        if(my_text) alert(my_text); 
     }
 }
+
