@@ -13,13 +13,15 @@ function createGrid () {
     } 
 }
 
-// let getSquares = document.getElementsByClassName('squares');
+document.getElementById('myBtn').addEventListener("click", resetGridSize);
 
-// for (let j = 0; j < gridDensity; j++) {
-//     getSquares[j].addEventListener('mouseover', () => {
-//         getSquares[j].style.backgroundColor = "grey";
-//     });
-// }
+function resetGridSize (){
+    let userInput = prompt ('Enter the number of squares per side for the new grid');
+    alert (userInput);
+    let numDivs = Math.pow(userInput,2);
+    createGrid(numDivs);
+}
+
 
 // window.onload = function getGridSize () {
 //     let gridPerSide;
@@ -33,9 +35,4 @@ function createGrid () {
 //     }
 // }
 
-// function createGrid (gridDensity) {
-//     for (let k = 0; k < gridDensity; k++) {
-//         htmlString += `<div class="squares"></div>`;
-//     }
-//     container.innerHTML = htmlString;
-// }
+
