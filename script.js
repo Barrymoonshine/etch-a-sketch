@@ -2,7 +2,9 @@ const container = document.querySelector('#container');
 
 let htmlString = "";
 
-for (let i = 0; i < 1024; i++) {
+let gridDensity = 1024;
+
+for (let i = 0; i < gridDensity; i++) {
     htmlString += `<div class="squares"></div>`;
 }
 
@@ -10,9 +12,7 @@ container.innerHTML = htmlString;
 
 let getSquares = document.getElementsByClassName('squares');
 
-let numSquares = getSquares.length;
-
-for (let j = 0; j < numSquares; j++) {
+for (let j = 0; j < gridDensity; j++) {
     getSquares[j].addEventListener('mouseover', () => {
         getSquares[j].style.backgroundColor = "grey";
     });
