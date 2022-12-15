@@ -12,17 +12,28 @@ let getSquares = document.getElementsByClassName('squares');
 
 let numSquares = getSquares.length;
 
-for (let e = 0; e < numSquares; e++) {
-    getSquares[e].addEventListener('mouseover', () => {
-        getSquares[e].style.backgroundColor = "grey";
+for (let j = 0; j < numSquares; j++) {
+    getSquares[j].addEventListener('mouseover', () => {
+        getSquares[j].style.backgroundColor = "grey";
     });
 }
 
-window.onload = function setGridSize () {
+window.onload = function getGridSize () {
+    let gridSize;
     let el = document.getElementById('gridInput');
-    el.onclick = function() {
-        let my_text = prompt ('Enter grid size here');
-        if(my_text) alert(my_text); 
+    el.onclick = function getUserInput () {
+        let gridSize = prompt ('Enter grid size here');
+        if(gridSize) alert (gridSize);
+        createGrid(gridSize);
     }
 }
 
+function createGrid (gridSize) {
+    for (let k = 0; k < gridSize; k++) {
+        htmlString += `<div class="squares"></div>`;
+        getSquares[k].addEventListener('mouseover', () => {
+            getSquares[k].style.backgroundColor = "grey";
+        });
+    }
+    container.innerHTML = htmlString;
+}
