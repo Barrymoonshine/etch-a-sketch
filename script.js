@@ -19,21 +19,20 @@ for (let j = 0; j < numSquares; j++) {
 }
 
 window.onload = function getGridSize () {
-    let gridSize;
+    let gridPerSide;
+    let gridDensity;
     let el = document.getElementById('gridInput');
     el.onclick = function getUserInput () {
-        let gridSize = prompt ('Enter grid size here');
-        if(gridSize) alert (gridSize);
-        createGrid(gridSize);
+        let gridPerSide = prompt ('Enter the number of squares per side for the new grid');
+        if(gridPerSide) alert (gridPerSide);
+        let gridDensity = Math.pow(gridPerSide,2);
+        createGrid(gridDensity);
     }
 }
 
-function createGrid (gridSize) {
-    for (let k = 0; k < gridSize; k++) {
+function createGrid (gridDensity) {
+    for (let k = 0; k < gridDensity; k++) {
         htmlString += `<div class="squares"></div>`;
-        getSquares[k].addEventListener('mouseover', () => {
-            getSquares[k].style.backgroundColor = "grey";
-        });
     }
     container.innerHTML = htmlString;
 }
