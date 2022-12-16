@@ -20,6 +20,7 @@ function resetGridSize () {
     let userInput = prompt ('Enter the number of squares per side for the new grid');
     alert (userInput);
     let numDivs = Math.pow(userInput,2);
+    document.getElementById('container').reset();
     createGrid(numDivs);
 }
 

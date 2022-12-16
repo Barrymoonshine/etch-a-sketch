@@ -14,21 +14,9 @@ body {
 }
 
 .squares {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
+    border: 1px solid lightgrey;
 }
 
-.slidecontainer {
-    width:100%;
-}
-
-.slider {
-    width:240px;
-    height:25px;
-    background:grey;
-    outline:none;
-    opacity:0.7;
-    transition: opacity .2s;
-    cursor:grab;
-}
 
