@@ -47,9 +47,14 @@ document.getElementById('randomColor').addEventListener("click", setRandomColor)
 function setRandomColor () {
     for (i =0; i < numDivs; i++) {
         newDiv.addEventListener('mouseover', () => {
-            newDiv.style.backgroundColor = "grey";
+            newDiv.style.backgroundColor = rgb;
         })
     }
 }
 
 
+const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+const r = randomBetween(0, 255);
+const g = randomBetween(0, 255);
+const b = randomBetween(0, 255);
+const rgb = `rgb(${r},${g},${b})`;
