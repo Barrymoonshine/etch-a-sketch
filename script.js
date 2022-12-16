@@ -22,12 +22,17 @@ function sizeDivs (numDivs = 1024) {
 document.getElementById('myBtn').addEventListener("click", resetGridSize)
 
 function resetGridSize () {
-    let userInput = prompt ('Enter the number of squares per side for the new grid');
-    alert ('A grid size of width ' + userInput + ' and height ' + userInput + ' will be populated');
-    let numDivs = Math.pow(userInput,2);
-    removeDivs();
-    createGrid(numDivs);
-    sizeDivs (numDivs);
+    let userInput = prompt ('Enter the number of squares per side for the new grid, please enter a number of 100 or below to stop you computer from blowing up!');
+    if (userInput <= 100)  {
+        alert ('A grid size of width ' + userInput + ' and height ' + userInput + ' will be populated');
+        let numDivs = Math.pow(userInput,2);
+        removeDivs();
+        createGrid(numDivs);
+        sizeDivs (numDivs);
+    }
+    else {
+        alert ('BOOM! You wrecked your computer bro, better call Bill Gates!')
+    }
 }
 
 function removeDivs () {
