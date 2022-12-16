@@ -44,17 +44,24 @@ function removeDivs () {
 
 document.getElementById('randomColor').addEventListener("click", setRandomColor);
 
-function setRandomColor () {
-    for (i =0; i < numDivs; i++) {
-        newDiv.addEventListener('mouseover', () => {
-            newDiv.style.backgroundColor = rgb;
-        })
-    }
+function setRandomColor (numDivs = 1024) {
+    const allSquares = document.querySelectorAll('.squares')
+        for (const squares of allSquares) {
+            squares.addEventListener('mouseover', () => {
+                squares.style.backgroundColor = "green";
+            })
+    }   
 }
 
 
-const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
-const r = randomBetween(0, 255);
-const g = randomBetween(0, 255);
-const b = randomBetween(0, 255);
-const rgb = `rgb(${r},${g},${b})`;
+// function randomInteger(max) {
+//     return Math.floor(Math.random()*(max + 1));
+// }
+
+// function randomRgbColor() {
+//     let r = randomInteger(255);
+//     let g = randomInteger(255);
+//     let b = randomInteger(255);
+//     let rgb = `rgb(${r},${g},${b})`;
+// }
+
