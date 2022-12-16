@@ -48,20 +48,20 @@ function setRandomColor (numDivs = 1024) {
     const allSquares = document.querySelectorAll('.squares')
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
-                squares.style.backgroundColor = "green";
+                squares.style.backgroundColor = randomRgbColor() ;
             })
     }   
 }
 
 
-// function randomInteger(max) {
-//     return Math.floor(Math.random()*(max + 1));
-// }
+function randomInteger(max) {
+    return Math.floor(Math.random()*(max + 1));
+}
 
-// function randomRgbColor() {
-//     let r = randomInteger(255);
-//     let g = randomInteger(255);
-//     let b = randomInteger(255);
-//     let rgb = `rgb(${r},${g},${b})`;
-// }
+function randomRgbColor() {
+    let r = randomInteger(255);
+    let g = randomInteger(255);
+    let b = randomInteger(255);
+    return `rgb(${r},${g},${b})`;
+}
 
