@@ -66,23 +66,15 @@ function randomRgbColor() {
 
 document.getElementById('darkenColor').addEventListener("click", setDarkerColor);
 
+
+
 function setDarkerColor (numDivs = 1024) {
+    int = 211;
     const allSquares = document.querySelectorAll('.squares')
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
-                squares.style.backgroundColor = darkerRgbColor() ;
+                int = int - (int * 0.1);
+                squares.style.backgroundColor = `rgb(${int},${int},${int})`;
             })
     }   
-}
-
-function reduceInteger(int) {
-    return (int - (int * 0.1));
-}
-
-
-function darkerRgbColor () {
-    let rD = reduceInteger(211);
-    let gD = reduceInteger(211);
-    let bD = reduceInteger(211);
-    return `rgb(${rD},${gD},${bD})`;
 }
