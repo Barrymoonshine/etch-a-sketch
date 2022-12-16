@@ -64,17 +64,14 @@ function randomRgbColor() {
     return `rgb(${r},${g},${b})`;
 }
 
-document.getElementById('darkenColor').addEventListener("click", setDarkerColor);
+document.getElementById('shader').addEventListener("click", applyShader);
 
-
-
-function setDarkerColor (numDivs = 1024) {
-    int = 211;
+function applyShader (numDivs = 1024) {
     const allSquares = document.querySelectorAll('.squares')
+    const currentOpacity = Number(newDiv.style.opacity)
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
-                int = int - (int * 0.1);
-                squares.style.backgroundColor = `rgb(${int},${int},${int})`;
-            })
-    }   
-}
+                squares.style.opacity = Number(currentOpacity + 0.1) ;
+            })  
+        }
+}   
