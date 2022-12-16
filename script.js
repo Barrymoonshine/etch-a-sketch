@@ -1,7 +1,7 @@
 document.body.onload = createGrid(), sizeDivs();
 
 function createGrid (numDivs = 1024) {
-    for (i =0; i <numDivs; i++) {
+    for (i =0; i < numDivs; i++) {
         let newDiv = document.createElement('div');
         newDiv.className = "squares";
         newDiv.addEventListener('mouseover', () => {
@@ -19,7 +19,7 @@ function sizeDivs (numDivs = 1024) {
     }   
 }
 
-document.getElementById('myBtn').addEventListener("click", resetGridSize)
+document.getElementById('gridSize').addEventListener("click", resetGridSize)
 
 function resetGridSize () {
     let userInput = prompt ('Enter the number of squares per side for the new grid, please enter a number of 100 or below to stop you computer from blowing up!');
@@ -39,6 +39,16 @@ function removeDivs () {
     const myNode = document.getElementById('container');
     while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
+    }
+}
+
+document.getElementById('randomColor').addEventListener("click", setRandomColor);
+
+function setRandomColor () {
+    for (i =0; i < numDivs; i++) {
+        newDiv.addEventListener('mouseover', () => {
+            newDiv.style.backgroundColor = "grey";
+        })
     }
 }
 
