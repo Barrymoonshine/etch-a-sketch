@@ -53,7 +53,6 @@ function setRandomColor (numDivs = 1024) {
     }   
 }
 
-
 function randomInteger(max) {
     return Math.floor(Math.random()*(max + 1));
 }
@@ -65,3 +64,25 @@ function randomRgbColor() {
     return `rgb(${r},${g},${b})`;
 }
 
+document.getElementById('darkenColor').addEventListener("click", setDarkerColor);
+
+function setDarkerColor (numDivs = 1024) {
+    const allSquares = document.querySelectorAll('.squares')
+        for (const squares of allSquares) {
+            squares.addEventListener('mouseover', () => {
+                squares.style.backgroundColor = darkerRgbColor() ;
+            })
+    }   
+}
+
+function reduceInteger(int) {
+    return (int - (int * 0.1));
+}
+
+
+function darkerRgbColor () {
+    let rD = reduceInteger(211);
+    let gD = reduceInteger(211);
+    let bD = reduceInteger(211);
+    return `rgb(${rD},${gD},${bD})`;
+}
