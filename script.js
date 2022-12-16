@@ -14,8 +14,8 @@ function createGrid (numDivs = 1024) {
 function sizeDivs (numDivs = 1024) {
     const allSquares = document.querySelectorAll('.squares')
         for (const squares of allSquares) {
-            squares.style.width = (480 / (Math.sqrt(numDivs)-2)) + 'px';
-            squares.style.height = (480 / (Math.sqrt(numDivs)-2)) + 'px';
+            squares.style.width = (480 / (Math.sqrt(numDivs))) -2  + 'px';
+            squares.style.height = (480 / (Math.sqrt(numDivs))) -2  + 'px';
     }   
 }
 
@@ -23,7 +23,7 @@ document.getElementById('myBtn').addEventListener("click", resetGridSize)
 
 function resetGridSize () {
     let userInput = prompt ('Enter the number of squares per side for the new grid');
-    alert ('A grid size of ' + userInput + ' will be populated');
+    alert ('A grid size of width ' + userInput + ' and height ' + userInput + ' will be populated');
     let numDivs = Math.pow(userInput,2);
     removeDivs();
     createGrid(numDivs);
