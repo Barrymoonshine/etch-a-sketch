@@ -68,10 +68,10 @@ document.getElementById('shader').addEventListener("click", applyShader);
 
 function applyShader (numDivs = 1024) {
     const allSquares = document.querySelectorAll('.squares')
-    const currentOpacity = Number(newDiv.style.opacity)
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
-                squares.style.opacity = Number(currentOpacity + 0.1) ;
-            })  
+                let opacity = Number(squares.style.opacity);    
+                squares.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
+                })
+            }
         }
-}   
