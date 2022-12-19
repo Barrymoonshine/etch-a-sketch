@@ -72,13 +72,13 @@ function applyShader (numDivs = 1024) {
             squares.addEventListener('mouseover', () => {
                 let opacity = Number(squares.style.opacity);    
                 if (opacity >= 1) {
+                    squares.style.backgroundColor = "black";
                     squares.style.opacity = Number(1);
                 } else {
-                    squares.style.opacity = Number((opacity) +0.1);
+                    squares.style.backgroundColor = "black";
+                    squares.style.opacity = Number((opacity) + 0.1);
                 }
             })
         }
 }
 
-
-        // squares.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
