@@ -42,18 +42,18 @@ function removeDivs () {
     }
 }
 
-document.getElementById('randomColor').addEventListener("click", setRandomColor);
+document.getElementById('randomColor').addEventListener("click", applyRandomColor);
 
-function setRandomColor (numDivs = 1024) {
-    const myNode = document.getElementById('container');
-    myNode.replaceWith(myNode.cloneNode(true));
-    const allSquares = document.querySelectorAll('.squares')
+
+function applyRandomColor (numDivs = 1024) {
+    const allSquares = document.querySelectorAll('.squares');
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
                 squares.style.backgroundColor = randomRgbColor() ;
             })
-    }   
+        }
 }
+
 
 function randomInteger(max) {
     return Math.floor(Math.random()*(max + 1));
@@ -68,19 +68,40 @@ function randomRgbColor() {
 
 document.getElementById('shader').addEventListener("click", applyShader);
 
+
 function applyShader (numDivs = 1024) {
     const allSquares = document.querySelectorAll('.squares')
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
-                let opacity = Number(squares.style.opacity);    
-                if (opacity >= 1) {
-                    squares.style.backgroundColor = "black";
-                    squares.style.opacity = Number(1);
-                } else {
-                    squares.style.backgroundColor = "black";
-                    squares.style.opacity = Number((opacity) + 0.1);
-                }
-            })
+                let opacity = Number((squares.style.opacity));
+                squares.style.backgroundColor = "black";
+                squares.style.opacity = Number((opacity) + 0.1) ;
+            })      
         }
+}
+
+
+
+document.getElementById('classic').addEventListener("click", applyGreyColor);
+
+function applyGreyColor (numDivs = 1024) {
+    const allSquares = document.querySelectorAll('.squares')
+        for (const squares of allSquares) {
+            squares.addEventListener('mouseover', () => { 
+                 squares.style.backgroundColor = "grey";
+                })
+        }
+}
+
+document.getElementById('eraser').addEventListener("click", applyWhiteColor);
+
+function applyWhiteColor (numDivs = 1024) {
+    const allSquares = document.querySelectorAll('.squares')
+        for (const squares of allSquares) {
+            squares.addEventListener('mouseover', () => { 
+                squares.style.backgroundColor = "white";
+                squares.style.border = "1px solid lightgrey";
+        })
+    }
 }
 
