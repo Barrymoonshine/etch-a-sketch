@@ -45,6 +45,8 @@ function removeDivs () {
 document.getElementById('randomColor').addEventListener("click", setRandomColor);
 
 function setRandomColor (numDivs = 1024) {
+    const myNode = document.getElementById('container');
+    myNode.replaceWith(myNode.cloneNode(true));
     const allSquares = document.querySelectorAll('.squares')
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
