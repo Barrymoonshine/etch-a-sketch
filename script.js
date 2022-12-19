@@ -71,7 +71,14 @@ function applyShader (numDivs = 1024) {
         for (const squares of allSquares) {
             squares.addEventListener('mouseover', () => {
                 let opacity = Number(squares.style.opacity);    
-                squares.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
-                })
-            }
+                if (opacity >= 1) {
+                    squares.style.opacity = Number(1);
+                } else {
+                    squares.style.opacity = Number((opacity) +0.1);
+                }
+            })
         }
+}
+
+
+        // squares.style.opacity = opacity >= 1 ? "1" : opacity + 0.1 + "";
