@@ -1,6 +1,5 @@
 body {
     display:flex;
-    background-color: white;
 }
 
 #container {
@@ -17,5 +16,4 @@ body {
 .squares {
     border: 1px solid lightgrey;
 }
-
 
