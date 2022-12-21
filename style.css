@@ -1,5 +1,11 @@
 body {
     display:flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: bisque;
+    margin: 0px;
+    min-height: 100vh;
 }
 
 #container {
@@ -10,10 +16,67 @@ body {
     margin: 0 auto;
     display:flex;
     flex-wrap: wrap;
-    border:5px solid lightgrey;
+    border:5px solid red;
+    background-color: white;
 }
 
 .squares {
+    display: flex;
+    flex-direction: column;
     border: 1px solid lightgrey;
 }
 
+.bigContainer {
+    display: flex;
+    margin: 50px 0px 0px 0px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 60px 30px 0 -130px;
+}
+
+#gridSize, #randomColor, #shader, #classic, #eraser, #reset {
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: crimson;
+    color: white;
+    cursor:pointer
+}
+
+#gridSize:hover{
+    border:3px solid black;
+}
+
+#randomColor:hover{
+    border:3px solid black;
+}
+
+#shader:hover{
+    border:3px solid black;
+}
+
+#classic:hover{
+    border:3px solid black;
+}
+
+#eraser:hover{
+    border:3px solid black;
+}
+
+#reset:hover{
+    border:3px solid black;
+}
+
+.footer {
+    font-size: 15px;
+    padding: 50px 0px 50px 0px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    width: 100%;
+    margin-top: auto;
+}

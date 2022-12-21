@@ -5,6 +5,7 @@ function createGrid (numDivs = 1024) {
         let newDiv = document.createElement('div');
         newDiv.className = "squares";
         newDiv.style.border = "1px solid lightgrey"
+        newDiv.style.backgroundColor = "white"
         newDiv.addEventListener('mouseover', () => {
             newDiv.style.backgroundColor = "grey";
         })
@@ -36,6 +37,15 @@ function resetGridSize () {
     }
 }
 
+document.getElementById('reset').addEventListener("click", resetGrid);
+
+function resetGrid () {
+    let numDivs = 1024;
+    removeDivs();
+    createGrid(numDivs);
+    sizeDivs (numDivs);
+}
+
 function removeDivs () {
     const myNode = document.getElementById('container');
     while (myNode.lastElementChild) {
@@ -51,6 +61,7 @@ function applyRandomColor () {
     removeMouseOver ();
         for (const squares of allSquares) {
             squares.onmouseover = function () {
+                squares.style.opacity = "initial";
                 squares.style.backgroundColor = randomRgbColor() ;
             }
         }
@@ -84,7 +95,7 @@ function applyShader () {
             squares.onmouseover = function () {
                 let opacity = Number((squares.style.opacity));
                 squares.style.backgroundColor = "black";
-                squares.style.opacity = (parseFloat(squares.style.opacity) || 0) + 0.2;
+                squares.style.opacity = (parseFloat(squares.style.opacity) || 0) + 0.1;
             }
         }
 }
@@ -96,6 +107,7 @@ function applyGreyColor () {
     const allSquares = document.querySelectorAll('.squares')
         for (const squares of allSquares) {
             squares.onmouseover = function () {
+                 squares.style.opacity = "initial";
                  squares.style.backgroundColor = "grey";
                 }
         }
