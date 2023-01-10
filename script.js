@@ -48,16 +48,18 @@ function applyUserChoice(userChoice) {
 }
 
 function resetGridSize() {
-    let userInput = prompt('Enter the number of squares per side for the new grid, please enter a number of 100 or below to stop you computer from blowing up!');
-    if (userInput <= 100) {
+    let userInput = prompt('Enter the number of squares per side for the new grid, please enter a positive number of 100 or below to stop your computer from blowing up!');
+    if (userInput <= 100 && userInput !== null) {
         alert('A grid size of width ' + userInput + ' and height ' + userInput + ' will be populated');
         let numDivs = Math.pow(userInput, 2);
         removeDivs();
         createGrid(numDivs);
         sizeSquares(numDivs);
-    }
-    else {
+    } else if (userInput >= 100) {
         alert('BOOM! You wrecked your computer bro, better call Bill Gates!');
+    } else {
+        alert(`As you have not entered a number of 100 or below, the grid will be reset to its' original 32x32 size`);
+        resetGrid();
     }
 }
 
