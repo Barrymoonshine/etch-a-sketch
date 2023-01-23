@@ -5,7 +5,8 @@ const getUserChoice = function (e) {
     applyUserChoice(e.target.id);
 }
 
-document.body.onload = createGrid(), sizeSquares();
+createGrid();
+sizeSquares();
 
 function createGrid(numSquares = 1024) {
     for (i = 0; i < numSquares; i++) {
@@ -32,6 +33,7 @@ for (i of ctrlBtns) {
 }
 
 function applyUserChoice(userChoice) {
+    removeMouseOver();
     if (userChoice == 'gridSize') {
         resetGridSize();
     } else if (userChoice == 'randomColor') {
@@ -48,23 +50,21 @@ function applyUserChoice(userChoice) {
 }
 
 function resetGridSize() {
-    let userInput = prompt('Enter the number of squares per side for the new grid, please enter a positive number of 100 or below to stop your computer from blowing up!');
-    if (userInput <= 100 && userInput !== null) {
-        alert('A grid size of width ' + userInput + ' and height ' + userInput + ' will be populated');
+    const userInput = prompt('Enter the number of squares per side for the new grid, please enter a positive number of 100 or below to stop your computer from blowing up!');
+    if (userInput <= 100 && userInput >= 1 && userInput !== '') {
+        alert(`A grid size of width  ${userInput} and height ${userInput} will be populated`);
         let numDivs = Math.pow(userInput, 2);
         removeDivs();
         createGrid(numDivs);
         sizeSquares(numDivs);
-    } else if (userInput >= 100) {
-        alert('BOOM! You wrecked your computer bro, better call Bill Gates!');
     } else {
-        alert(`As you have not entered a number of 100 or below, the grid will be reset to its' original 32x32 size`);
+        alert('As you have not entered a number of 100 or below, the grid will be reset to it\'s original 32x32 size');
         resetGrid();
     }
 }
 
 function resetGrid() {
-    let numSquares = 1024;
+    let numSquares = document.getElementsByClassName('squares').length;
     removeDivs();
     createGrid(numSquares);
     sizeSquares(numSquares);
@@ -77,7 +77,6 @@ function removeDivs() {
 }
 
 function applyRandomColor() {
-    removeMouseOver();
     for (const squares of allSquares) {
         squares.onmouseover = function () {
             squares.style.opacity = "initial";
@@ -97,17 +96,15 @@ function randomInteger(max) {
 }
 
 function randomRgbColor() {
-    let r = randomInteger(255);
-    let g = randomInteger(255);
-    let b = randomInteger(255);
+    const r = randomInteger(255);
+    const g = randomInteger(255);
+    const b = randomInteger(255);
     return `rgb(${r},${g},${b})`;
 }
 
 function applyShader() {
-    removeMouseOver();
     for (const squares of allSquares) {
         squares.onmouseover = function () {
-            let opacity = Number((squares.style.opacity));
             squares.style.backgroundColor = "black";
             squares.style.opacity = (parseFloat(squares.style.opacity) || 0) + 0.1;
         }
@@ -115,7 +112,6 @@ function applyShader() {
 }
 
 function applyGreyColor() {
-    removeMouseOver();
     for (const squares of allSquares) {
         squares.onmouseover = function () {
             squares.style.opacity = "initial";
@@ -125,7 +121,6 @@ function applyGreyColor() {
 }
 
 function applyWhiteColor() {
-    removeMouseOver();
     for (const squares of allSquares) {
         squares.onmouseover = function () {
             squares.style.opacity = "initial";
